@@ -17,9 +17,31 @@
   color: #61dafb;
 }
 
-.map-div {
-  width: 50%;
+#container {
+  display: flex;
 }
+
+.list-div {
+  width: 30%;
+  height: 100vh;
+  background-color: #000;
+  color: #FFF;
+  transform: translateX(0);
+}
+
+.map-div {
+  position: relative;
+  width: 100%;
+ }
+
+.list-div-bye {
+  transform: translateX(-100%);
+  width: 0%;
+  transition: all 0.5s ease-out;
+}
+
+
+
 
 /* @keyframes App-logo-spin {
   from {

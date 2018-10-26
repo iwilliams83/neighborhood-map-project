@@ -4,23 +4,28 @@ import MapContainer from './MapContainer'
 import LocationList from './LocationList'
 import './App.css';
 
-// const listStyles = {
-//   width: '50%',
-//   height: '100%'
-// };
 
 class App extends Component {
+  state = {
+    isClicked: false
+  }
   render() {
+    let classes = "list-div";
+    classes += this.state.isClicked ? " list-div-bye" : "";
+
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="App-header" onClick={() => this.setState((prevState) => ({isClicked: !prevState.isClicked}))}>
           Neighborhood Map Project
         </header>
-        <div>
-          <LocationList />
-        </div>
-        <div className="map-div">
-          <MapContainer />
+
+        <div id="container">
+          <div className={classes}>
+            <LocationList />
+          </div>
+          <div className="map-div">
+            <MapContainer />
+          </div>
         </div>
       </div>
     );

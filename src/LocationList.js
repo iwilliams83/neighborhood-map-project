@@ -3,8 +3,14 @@ import React, { Component } from 'react'
 class LocationList extends Component {
   render(){
     return <div>
-      I'm a list of locations
-    </div>
+            <div>
+              Input Field for filtering results
+            </div>
+            <div>
+              List of Results
+            </div>
+
+          </div>
   }
 }
 
