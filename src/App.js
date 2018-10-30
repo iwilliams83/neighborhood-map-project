@@ -28,7 +28,12 @@ class App extends Component {
     let positions = places.map(place => {
       return {
                 id: place.id,
-                coordinates: {lat: place.location.lat, lng: place.location.lng}
+                coordinates: {lat: place.location.lat, lng: place.location.lng},
+                info: {
+                  name: place.name,
+                  address1: place.location.address,
+                  address2: place.location.formattedAddress[1]
+                }
               }
     })
 
