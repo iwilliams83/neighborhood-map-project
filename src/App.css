@@ -27,6 +27,7 @@
   background-color: #000;
   color: #FFF;
   transform: translateX(0);
+  padding: 0.5em;
 }
 
 .map-div {
@@ -34,20 +35,40 @@
   width: 100%;
  }
 
-.list-div-bye {
+ .filter-field {
+   display: flex;
+   background-color: #282c33;
+    border: solid #282c33;
+ }
+
+ #filter {
+   background-color: #282c33;
+   color: white;
+   border: none;
+   font-size: medium;
+   font-weight: bold;
+   margin-left: 0.4em;
+ }
+
+ .input-field {
+   width: 80%;
+ }
+
+.hide-list {
   transform: translateX(-100%);
   width: 0%;
   transition: all 0.5s ease-out;
 }
 
+.place-container {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
 
-
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+.place {
+  background-color: black;
+  color: white;
+  font-size: smaller;
+  margin: 1px;
+}
