@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import MapContainer from './MapContainer'
 import LocationList from './LocationList'
 import './App.css';
@@ -14,6 +13,7 @@ const URL = `https://api.foursquare.com/v2/venues/search?client_id=${clientID}
 class App extends Component {
   state = {
     places: [],
+    filtered: [],
     positions: [],
     isClicked: false
   }
@@ -35,11 +35,25 @@ class App extends Component {
     this.setState({ positions })
   }
 
+  handleFilter = (query) => {
+    query = query.toLowerCase()
+
+    let venues = [...this.state.places]
+
+    let filtered = venues.filter(venue => {
+      let name = venue.name.toLowerCase()
+      if (name.includes(query)) return venue
+    })
+
+    this.setState({ filtered })
+    this.getPositions(filtered)
+  }
+
   render() {
     let classes = "list-div";
     classes += this.state.isClicked ? " hide-list" : "";
 
-    const { places, positions } = this.state
+    const { places, positions, filtered } = this.state
 
     return (
       <div className="App">
@@ -49,7 +63,8 @@ class App extends Component {
 
         <div id="container">
           <div className={classes}>
-            <LocationList places={places}/>
+            <LocationList places={filtered.length > 0 ? filtered : places}
+                            handleFilter={this.handleFilter}/>
           </div>
           <div className="map-div">
             <MapContainer positions={positions}/>
