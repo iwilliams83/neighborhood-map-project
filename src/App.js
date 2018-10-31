@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MapContainer from './MapContainer'
 import LocationList from './LocationList'
 import './App.css';
+import menuIcon from './menu-icon.png'
 
 const clientID = 'Q3OXIUKBYDMB2BAI1QPUHZSKLHTBZB4BRZ0AYOCZGIATKN4G'
 const clientSecret = 'NUR2V3QHB2RBQSZIKA2OFYIEDLZVF0RJPW1UXCEZSAO4ECZV'
@@ -62,16 +63,16 @@ class App extends Component {
 
     return (
       <div className="App">
-
         <aside className={classes}>
           <LocationList places={filtered.length > 0 ? filtered : places}
                           handleFilter={this.handleFilter}/>
         </aside>
+
         <div id="container">
           <div className="App-header"
             onClick={() => this.setState((prevState) => ({isClicked: !prevState.isClicked}))}>
             <header >
-              Brooklyn Heights, NYC
+              <img src={menuIcon} alt="menu icon"/>
             </header>
           </div>
 
