@@ -70,9 +70,10 @@ class App extends Component {
 
         <div id="container">
           <div className="App-header"
-            onClick={() => this.setState((prevState) => ({isClicked: !prevState.isClicked}))}>
+            >
             <header >
-              <img src={menuIcon} alt="menu icon"/>
+              <img src={menuIcon} alt="menu icon"
+                onClick={() => this.setState((prevState) => ({isClicked: !prevState.isClicked}))}/>
             </header>
           </div>
 

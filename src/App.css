@@ -9,13 +9,14 @@
   display: flex;
   font-size: 1.7em;
   color: #09a7f2;
-  width: 80vw;
+  /* width: 80vw; */
 }
 
 header {
   display: flex;
   align-items: center;
   margin-left: 1em;
+  width: 100%;
 }
 
 .App-link {
@@ -26,13 +27,13 @@ header {
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%
 }
 
 .list-div {
-  width: 33vw;
+  width: 25vw;
   background-color: #000;
   color: #FFF;
-  -webkit-transform: translateX(0);
   transform: translateX(0);
   padding: 0.5em;
   height: calc(100vh - 1em);
@@ -73,7 +74,7 @@ header {
 
 .hide-list {
   transform: translateX(-100%);
-  width: 0%;
+  display: none;
   transition: all 0.5s ease-out;
 }
 
