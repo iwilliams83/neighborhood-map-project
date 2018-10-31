@@ -16,6 +16,9 @@ class LocationList extends Component {
   render(){
     const { places } = this.props
     return <div>
+              <div id="list-name">
+                Restaurants
+              </div>
               <div className="filter-field">
                 <input className="input-field"
                   value={this.state.query} onChange={this.handleChange}/>
