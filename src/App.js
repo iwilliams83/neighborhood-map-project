@@ -63,14 +63,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header" onClick={() => this.setState((prevState) => ({isClicked: !prevState.isClicked}))}>
-          Neighborhood Map Project
+          Brooklyn Heights, NYC
         </header>
 
         <div id="container">
-          <div className={classes}>
+          <aside className={classes}>
             <LocationList places={filtered.length > 0 ? filtered : places}
                             handleFilter={this.handleFilter}/>
-          </div>
+          </aside>
           <div className="map-div">
             <MapContainer positions={positions}/>
           </div>
