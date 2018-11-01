@@ -9,7 +9,6 @@
   display: flex;
   font-size: 1.7em;
   color: #09a7f2;
-  /* width: 80vw; */
 }
 
 header {
@@ -32,6 +31,7 @@ header {
 
 .list-div {
   width: 25vw;
+  min-width: 167px;
   background-color: #000;
   color: #FFF;
   transform: translateX(0);

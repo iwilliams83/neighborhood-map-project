@@ -19,31 +19,42 @@ class App extends Component {
     isClicked: false
   }
 
+  // make a fetch to the Foursquare API when the App component mounts
   componentDidMount(){
-    fetch(URL).then(data => data.json())
-      .then(data => this.setState({places: data.response.venues}))
-      .then(() => this.getPositions(this.state.places))
+    fetch(URL).then(response => {
+      //handle case of network error
+      if(response.ok) {
+        return response.json();
+      }
+      throw new Error('Network response was not ok.')
+    })
+    .then(data => this.setState({places: data.response.venues}))
+    .then(() => this.getPositions(this.state.places))
+    .catch(error => console.log(error))
   }
 
+  // parse data from Foursquare API to get the lat/long and some other info,
+  // then use it to populate 'positions' on state
   getPositions = (places) => {
     let positions = places.map(place => {
       return {
-                id: place.id,
-                coordinates: {lat: place.location.lat, lng: place.location.lng},
-                info: {
-                  name: place.name,
-                  address1: place.location.address,
-                  address2: place.location.formattedAddress[1]
-                }
+               id: place.id,
+               coordinates: {lat: place.location.lat, lng: place.location.lng},
+               info: {
+                name: place.name,
+                address1: place.location.address,
+                address2: place.location.formattedAddress[1]
               }
+            }
     })
-
     this.setState({ positions })
   }
 
+  // filter data that is returned from Foursquare API according to what's being
+  // typed into the 'filter' input field
   handleFilter = (query) => {
     query = query.toLowerCase()
-
+    
     let venues = [...this.state.places]
 
     let filtered = venues.filter(venue => {
@@ -57,6 +68,7 @@ class App extends Component {
 
   render() {
     let classes = "list-div";
+    // add 'hide-list' class to list-div when hamburger menu icon is clicked
     classes += this.state.isClicked ? " hide-list" : "";
 
     const { places, positions, filtered } = this.state

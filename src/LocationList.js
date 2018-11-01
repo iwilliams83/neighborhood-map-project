@@ -11,8 +11,6 @@ class LocationList extends Component {
       () => this.props.handleFilter(this.state.query))
   }
 
-
-
   render(){
     const { places } = this.props
     return <div>

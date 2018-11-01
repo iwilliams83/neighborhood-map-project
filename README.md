@@ -14,6 +14,17 @@ The app is written in React, and utilizes the Google Maps API (for the map, mark
 ## Resources
 ** For info on integrating Google Maps API with React, these blog posts were helpful:**
 
-https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/
+- https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/
 
-https://scotch.io/tutorials/react-apps-with-the-google-maps-api-and-google-maps-react
+- https://scotch.io/tutorials/react-apps-with-the-google-maps-api-and-google-maps-react
+
+
+** For the restaurant locations & information:**
+
+- Foursquare API https://developer.foursquare.com/
+
+
+** For the hamburger menu icon:**
+
+- https://www.iconfinder.com
+- https://www.iconfinder.com/icons/2849812/bars_interface_media_menu_multimedia_icon
