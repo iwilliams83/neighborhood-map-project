@@ -54,7 +54,7 @@ class App extends Component {
   // typed into the 'filter' input field
   handleFilter = (query) => {
     query = query.toLowerCase()
-    
+
     let venues = [...this.state.places]
 
     let filtered = venues.filter(venue => {
